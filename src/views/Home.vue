@@ -2,12 +2,12 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
+        <img src="@/assets/Corinthians.png" alt="Vuetify.js" class="mb-5">
         <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
+          &#8220;A história do Sport Club Corinthians Paulista cobre mais de um século de futebol do clube brasileiro baseado em São Paulo, fundado em 1 de setembro de 1910 e reconhecido como um dos mais bem-sucedidos entre as equipes do futebol do Brasil.&#8221;
           <footer>
             <small>
-              <em>&mdash;John Johnson</em>
+              <em>&mdash;Frank Vitor</em>
             </small>
           </footer>
         </blockquote>
@@ -18,7 +18,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
@@ -31,5 +32,8 @@ li {
 }
 a {
   color: #42b983;
+}
+img {
+width: 200px;
 }
 </style>
