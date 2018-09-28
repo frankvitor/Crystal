@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
+import Bolo from './views/Bolo.vue'
+import Teste from './views/Teste.vue'
 
 Vue.use(Router)
 
@@ -23,9 +25,19 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/bolo',
+      name: 'bolo',
+      component: Bolo
+    },
+    {
+      path: '/',
+      name: 'teste',
+      component: Teste
     }
   ]
 })
