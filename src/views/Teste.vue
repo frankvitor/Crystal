@@ -125,7 +125,11 @@ blockquote {
 export default {
   data() {
     return {
+      rating: 2,
       items: [
+        {
+          src: "bolo.png"
+        },
         {
           src:
             "https://ederepente50.files.wordpress.com/2018/08/bolo-papai-_alta.png?w=604"

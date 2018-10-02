@@ -1,60 +1,29 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      persistent
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      enable-resize-watcher
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          value="true"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+    <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
+      <v-flex xs12 sm4 text-xs-center v-for="(item, i) in items" :key="i">
+        <div>
+          <v-icon v-html="item.icon" color="#FF6600"></v-icon>
+          <v-btn flat color="#FF6600" v-text="item.title"></v-btn>
+        </div>
+      </v-flex>
     </v-navigation-drawer>
-    <v-toolbar
-      app
-      :clipped-left="clipped"
-    >
+    <v-toolbar color="#FF6600" dark app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>web</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>search</v-icon>
       </v-btn>
-      <v-btn icon @click="sair">
-        <v-icon>power_settings_news</v-icon>
-      </v-btn>
     </v-toolbar>
     <v-content>
-      <router-view/>
+      <router-view />
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-      app
-    >
+    <v-navigation-drawer temporary :right="right" v-model="rightDrawer" fixed app>
       <v-list>
         <v-list-tile @click="right = !right">
           <v-list-tile-action>
-            <v-icon>compare_arrows</v-icon>
+            <v-icon>info</v-icon>
           </v-list-tile-action>
           <v-list-tile-title>Informações</v-list-tile-title>
         </v-list-tile>
@@ -67,24 +36,38 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Confira'
-      }],
+      items: [
+        {
+          icon: "view_list",
+          title: "Menu"
+        },
+        {
+          icon: "home",
+          title: "Inicio"
+        },
+        {
+          icon: "local_dining",
+          title: "Categoria"
+        },
+        {
+          icon: "favorite_border",
+          title: "Favoritos"
+        }
+      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      sair: '/',
-      title: ''
-    }
+      sair: "/",
+      title: "Receitas"
+    };
   }
-}
+};
 </script>
+

@@ -19,12 +19,6 @@
                   </v-btn>
                   <span>Source</span>
                 </v-tooltip>
-                <!-- <v-tooltip right>
-                  <v-btn slot="activator" icon large href="https://codepen.io/johnjleider/pen/wyYVVj" target="_blank">
-                    <v-icon large>codepen</v-icon>
-                  </v-btn>
-                  <span>Codepen</span>
-                </v-tooltip> -->
               </v-toolbar>
               <v-card-text>
                 <v-form>

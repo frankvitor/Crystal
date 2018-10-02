@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
-import Bolo from './views/Bolo.vue'
 import Teste from './views/Teste.vue'
+import Cards from './views/Cards.vue'
 
 Vue.use(Router)
 
@@ -30,14 +30,14 @@ export default new Router({
       component: Login
     },
     {
-      path: '/bolo',
-      name: 'bolo',
-      component: Bolo
+      path: '/teste',
+      name: 'teste',
+      component: Teste
     },
     {
       path: '/',
-      name: 'teste',
-      component: Teste
+      name: 'cards',
+      component: Cards
     }
   ]
 })
