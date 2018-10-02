@@ -2,10 +2,12 @@
   <v-app>
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
       <v-flex xs12 sm4 text-xs-center v-for="(item, i) in items" :key="i">
-        <div>
+        <div style="width: 30%; float: left; margin: 8px 0;text-align:center;">
           <v-icon v-html="item.icon" color="#FF6600"></v-icon>
-          <v-btn flat color="#FF6600" v-text="item.title"></v-btn>
         </div>
+        <div style="width: 70%; float: left;">
+          <v-btn flat color="#FF6600" v-text="item.title"></v-btn>
+        </div>       
       </v-flex>
     </v-navigation-drawer>
     <v-toolbar color="#FF6600" dark app :clipped-left="clipped">
@@ -50,15 +52,18 @@ export default {
         },
         {
           icon: "home",
-          title: "Inicio"
+          title: "Inicio",
+          href: "/"
         },
         {
           icon: "local_dining",
-          title: "Categoria"
+          title: "Categoria",
+          href: "/Teste"
         },
         {
           icon: "favorite_border",
-          title: "Favoritos"
+          title: "Favoritos",
+
         }
       ],
       miniVariant: false,

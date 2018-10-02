@@ -4,7 +4,7 @@
             <v-container fluid grid-list-lg>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-card color="#FFE3D0" class="white--text">
+                        <v-card color="#FFF1E7" class="white--text">
                             <v-layout xs12 sm4>
                                 <v-flex xs5>
                                     <v-img src="bolo.png" alt="Vuetify.js" height="125px" contain></v-img>
@@ -12,14 +12,18 @@
                                 <v-flex xs5>
                                     <v-card-title primary-title>
                                         <div>
-                                            <div class="headline"><h3>Prestígio</h3></div>
-                                            <div><h4>Diego</h4></div>
+                                            <div class="headline">
+                                                <h3>Prestígio</h3>
+                                            </div>
+                                            <div>
+                                                <h4>Diego</h4>
+                                            </div>
                                         </div>
                                     </v-card-title>
                                 </v-flex>
                                 <v-flex xs3>
                                     <v-btn flat icon color="#D10000" dark>
-                                        <v-icon>favorite</v-icon>
+                                        <v-icon >favorite</v-icon>
                                     </v-btn>
                                 </v-flex>
 
@@ -29,12 +33,14 @@
                                 <v-btn slot="activator" href="/Teste" color="#FF6600" dark>
                                     Ver receita
                                 </v-btn>
+                               <v-spacer></v-spacer>
+                                <v-icon color="#171717">share</v-icon>
                             </v-card-actions>
                         </v-card>
                     </v-flex>
 
                     <v-flex xs12>
-                        <v-card color="#FFE3D0" class="white--text">
+                        <v-card color="#FFF1E7" class="white--text">
                             <v-layout row>
                                 <v-flex xs5>
                                     <v-img src="morango.png" height="125px" contain></v-img>
@@ -42,8 +48,12 @@
                                 <v-flex xs5>
                                     <v-card-title primary-title>
                                         <div>
-                                            <div class="headline" color="#2F1300"><h3>Morango</h3></div>
-                                            <div><h4>Frank</h4></div>
+                                            <div class="headline" color="#2F1300">
+                                                <h3>Morango</h3>
+                                            </div>
+                                            <div>
+                                                <h4>Frank</h4>
+                                            </div>
                                         </div>
                                     </v-card-title>
                                 </v-flex>
@@ -58,6 +68,8 @@
                                 <v-btn slot="activator" href="/Teste" color="#FF6600" dark>
                                     Ver receita
                                 </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-icon color="#171717">share</v-icon>
                             </v-card-actions>
                         </v-card>
                     </v-flex>
@@ -67,9 +79,9 @@
     </div>
 </template>
 <style scoped>
-
-h3, h4 {
-  color: #2F1300;
+h3,
+h4 {
+  color: #2f1300;
 }
 </style>
 
