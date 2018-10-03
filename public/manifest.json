@@ -1,20 +1,20 @@
 {
-  "name": "crystal",
-  "short_name": "crystal",
+  "name": "Receitaria",
+  "short_name": "Receitaria",
   "icons": [
     {
-      "src": "/img/icons/android-chrome-192x192.png",
+      "src": "/img/icons/logocandy1.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/icons/android-chrome-512x512.png",
+      "src": "/img/icons/logocandy.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "theme_color": "primary"
 }
