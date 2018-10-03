@@ -45,7 +45,7 @@
                         <v-flex xs4>
                             <v-img src="morango.png" height="125px" contain></v-img>
                         </v-flex>
-                        <v-flex xs2>
+                        <v-flex xs6>
                             <v-card-title primary-title>
                                 <div>
                                     <div class="headline" color="#2F1300">
@@ -79,8 +79,7 @@
 </template>
 
 <style scoped>
-h3,
-h4 {
+h3 {
   color: #2f1300;
 }
 

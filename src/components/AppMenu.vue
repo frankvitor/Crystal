@@ -1,15 +1,16 @@
 <template>
   <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
-    <v-toolbar dark color="primary">
-      <v-list>
-        <v-list-tile>
-          <v-list-tile-title class="title">
-            Receitaria v1.0.3
-          </v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-toolbar>
-
+    <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+      <!-- <v-toolbar dark color="primary"> -->
+        <v-list>
+          <v-list-tile>
+            <v-list-tile-title class="title">
+              <h3>Receitaria</h3>
+            </v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      <!-- </v-toolbar> -->
+    </v-img>
     <v-divider></v-divider>
 
     <v-list dense class="pt-0">
@@ -68,4 +69,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+h3 {
+  color: #2f1300;
+}
+
+</style>
 
