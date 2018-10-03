@@ -5,7 +5,7 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-title class="title">
-              <h3>Receitaria</h3>
+              <!-- <h3>Receitaria</h3> -->
             </v-list-tile-title>
           </v-list-tile>
         </v-list>

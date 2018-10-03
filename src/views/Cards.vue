@@ -79,7 +79,7 @@
 </template>
 
 <style scoped>
-h3 {
+h3,h4 {
   color: #2f1300;
 }
 
