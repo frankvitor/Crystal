@@ -30,7 +30,6 @@ export default {
     return {
       clipped: false,
       menuAberto: false,
-      sair: "/",
       title: "Receitas"
     };
   },

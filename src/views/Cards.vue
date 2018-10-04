@@ -75,11 +75,11 @@
             </v-flex>
         </v-layout>
     </v-container>
-
 </template>
 
 <style scoped>
-h3,h4 {
+h3,
+h4 {
   color: #2f1300;
 }
 

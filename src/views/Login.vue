@@ -7,12 +7,6 @@
             <v-toolbar dark color="primary">
               <v-toolbar-title>Login</v-toolbar-title>
               <v-spacer></v-spacer>
-              <!-- <v-tooltip bottom>
-                <v-btn slot="activator" :href="source" icon large target="_blank">
-                  <v-icon large>code</v-icon>
-                </v-btn>
-                <span>Source</span>
-              </v-tooltip> -->
             </v-toolbar>
             <v-card-text>
               <v-form>
@@ -22,7 +16,7 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn slot="activator" href="/" color="blue lighten-2" dark>Entrar</v-btn>
+              <v-btn slot="activator" href="/" color="#b0bec5" dark>Entrar</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
