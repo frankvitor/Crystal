@@ -30,7 +30,7 @@ export default {
     return {
       clipped: false,
       menuAberto: false,
-      title: "Receitas"
+      title: "Receitas",
     };
   },
   computed:{
