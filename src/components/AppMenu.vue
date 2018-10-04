@@ -46,7 +46,7 @@ export default {
         },
         {
           icon: "local_dining",
-          title: "Categoria",
+          title: "Categorias",
           href: "/Teste"
         },
         {
