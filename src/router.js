@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from './views/Login.vue'
 import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
+import Receita from './views/Receita.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/teste',
       name: 'teste',
       component: Teste
+    },
+    {
+      path: '/receita',
+      name: 'receita',
+      component: Receita
     }
   ]
 })
