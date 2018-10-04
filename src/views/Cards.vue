@@ -22,7 +22,7 @@
                         </v-flex>
                         <v-flex xs2>
                             <v-btn flat icon color="#D10000" dark>
-                                <v-icon>{{ item.icon }}</v-icon>
+                                <v-icon>{{ icon }}</v-icon>
                             </v-btn>
                         </v-flex>
                     </v-layout>
@@ -71,7 +71,7 @@ export default {
         },
         {
           src: "/imagens/4.png",
-          title: "s",
+          title: "Cereja",
           nome: "Daniel",
         }
       ]
