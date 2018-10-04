@@ -2,9 +2,9 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="@/assets/Corinthians.png" alt="Vuetify.js" class="mb-5">
+        <img src="@/assets/logocandy1.png" alt="Vuetify.js" class="mb-5">
         <blockquote>
-          &#8220;A história do Sport Club Corinthians Paulista cobre mais de um século de futebol do clube brasileiro baseado em São Paulo, fundado em 1 de setembro de 1910 e reconhecido como um dos mais bem-sucedidos entre as equipes do futebol do Brasil.&#8221;
+          &#8220;App de receitas.&#8221;
           <footer>
             <small>
               <em>&mdash;Frank Vitor</em>
