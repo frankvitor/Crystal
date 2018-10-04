@@ -3,7 +3,7 @@
         <v-layout row wrap>
             <h1>Bolo prestigio</h1>
             <v-spacer></v-spacer>
-            <v-rating v-model="rating"></v-rating>
+            <v-rating v-model="rating" dark color="red"></v-rating>
         </v-layout>
         <v-layout row wrap>
             <v-flex xs12>
@@ -104,11 +104,8 @@
 </template>
 
 <style scoped>
-/* img {
-  width: 200px;
-} */
 h1 {
-  color: gray;
+  color: #FF6600;
 }
 h2 {
   color: grey;
@@ -128,19 +125,23 @@ export default {
       rating: 2,
       items: [
         {
-          src: "bolo.png"
+          src: "/imagens/1.png"
         },
         {
           src:
-            "https://ederepente50.files.wordpress.com/2018/08/bolo-papai-_alta.png?w=604"
+            "/imagens/2.png"
         },
         {
           src:
-            "https://4.bp.blogspot.com/-e1hP6F9i10U/UzMjYiIM_OI/AAAAAAAAKaM/I1FoIsqT1uk/s1600/PNG+-+Bolo+chocolate+1.png"
+            "/imagens/3.png"
         },
         {
           src:
-            "http://bocadoforno.com.br/wp-content/uploads/floresta-negra4.png"
+            "/imagens/4.png"
+        },
+        {
+          src:
+            "/imagens/5.png"
         }
       ]
     };

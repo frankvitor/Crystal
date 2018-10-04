@@ -25,17 +25,26 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta:{
+        title: 'Login'
+      }
     },
     {
       path: '/teste',
       name: 'teste',
-      component: Teste
+      component: Teste,
+      meta:{
+        title: 'Bolo'
+      }
     },
     {
       path: '/receita',
       name: 'receita',
-      component: Receita
+      component: Receita,
+      meta:{
+        title: 'Blah'
+      }
     }
   ]
 })

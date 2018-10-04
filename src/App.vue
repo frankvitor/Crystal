@@ -4,7 +4,7 @@
 
     <v-toolbar color="primary" dark app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="menuAberto = !menuAberto"></v-toolbar-side-icon>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title v-text="titlex"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>search</v-icon>
@@ -30,9 +30,13 @@ export default {
     return {
       clipped: false,
       menuAberto: false,
-      sair: "/",
-      title: "Receitas"
+      title: "Receitas",
     };
+  },
+  computed:{
+    titlex(){
+      return this.$route.meta.title || this.title
+    }
   },
   components: {
     AppMenu
