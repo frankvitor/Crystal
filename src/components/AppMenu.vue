@@ -2,13 +2,13 @@
   <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
     <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
       <!-- <v-toolbar dark color="primary"> -->
-        <v-list>
-          <v-list-tile>
-            <v-list-tile-title class="title">
-              <!-- <h3>Receitaria</h3> -->
-            </v-list-tile-title>
-          </v-list-tile>
-        </v-list>
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-title class="title">
+            <!-- <h3>Receitaria</h3> -->
+          </v-list-tile-title>
+        </v-list-tile>
+      </v-list>
       <!-- </v-toolbar> -->
     </v-img>
     <v-divider></v-divider>
@@ -52,6 +52,11 @@ export default {
         {
           icon: "favorite_border",
           title: "Favoritos"
+        },
+        {
+          icon: "exit_to_app",
+          title: "Sair",
+          href: "/Login"
         }
       ],
       miniVariant: false
@@ -73,6 +78,5 @@ export default {
 h3 {
   color: #2f1300;
 }
-
 </style>
 
