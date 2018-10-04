@@ -109,7 +109,6 @@ h1 {
 }
 h2 {
   color: grey;
-  align-self: auto;
 }
 li {
   color: darkgray;
