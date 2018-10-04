@@ -2,7 +2,7 @@
   <v-content>
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
-        <v-flex xs12 sm8 md4>
+        <v-flex xs12 sm6 md6>
           <v-card class="elevation-12">
             <v-toolbar dark color="primary">
               <v-toolbar-title>Login</v-toolbar-title>
@@ -19,6 +19,11 @@
               <v-btn slot="activator" href="/" color="#b0bec5" dark>Entrar</v-btn>
             </v-card-actions>
           </v-card>
+          <v-flex xs12 md4>
+              <v-btn flat slot="activator" href="/">Esqueceu a senha?</v-btn>   
+              <cadastro></cadastro>
+              <!-- <v-btn flat v-model="menuAberto" @click.stop="menuAberto = !menuAberto">Cadastre-se</v-btn> -->
+          </v-flex>
         </v-flex>
       </v-layout>
     </v-container>
@@ -26,12 +31,17 @@
 </template>
 
 <script>
+import Cadastro from "../components/Cadastro";
+
 export default {
   data: () => ({
     drawer: null
   }),
   props: {
     source: String
+  },
+   components: {
+    Cadastro
   }
 };
 </script>
