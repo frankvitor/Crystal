@@ -68,15 +68,11 @@ export default {
           src: "/imagens/5.png",
           title: "Prestígio",
           nome: "Diego",
-          href: "/Teste",
-          iconCompart: "share"
         },
         {
           src: "/imagens/4.png",
           title: "s",
           nome: "Daniel",
-          href: "/Teste",
-          iconCompart: "share"
         }
       ]
     };
