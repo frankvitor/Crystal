@@ -59,7 +59,7 @@ export default {
         {
           icon: "exit_to_app",
           title: "Sair",
-          href: "/Login"
+          href: "/Login2"
         }
       ],
       miniVariant: false
