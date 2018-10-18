@@ -13,7 +13,6 @@
                     </v-flex>
                     <v-flex xs12 sm6>
                         <v-btn flat slot="activator" href="/">Esqueceu a senha?</v-btn>
-
                         <cadastro></cadastro>
                     </v-flex>
                 </v-flex>
