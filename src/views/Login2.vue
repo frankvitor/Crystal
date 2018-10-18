@@ -9,7 +9,7 @@
                     </v-form>
                     <v-flex xs12>
                         <v-spacer></v-spacer>
-                        <v-btn block="activator" href="/" color="#b0bec5" dark large>Entrar</v-btn>
+                        <v-btn block="activator" href="/Cards" color="#b0bec5" dark large>Entrar</v-btn>
                     </v-flex>
                     <v-flex xs12 sm6>
                         <v-btn flat slot="activator" href="/">Esqueceu a senha?</v-btn>

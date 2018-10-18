@@ -45,7 +45,7 @@ export default {
         {
           icon: "home",
           title: "Inicio",
-          href: "/"
+          href: "/Cards"
         },
         {
           icon: "local_dining",
@@ -59,7 +59,7 @@ export default {
         {
           icon: "exit_to_app",
           title: "Sair",
-          href: "/Login2"
+          href: "/"
         }
       ],
       miniVariant: false
