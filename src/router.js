@@ -25,7 +25,8 @@ export default new Router({
       name: 'login2',
       component: Login2,
       meta:{
-        title: 'Login2'
+        title: 'Login',
+        showToolbar: false
       }
     },
     {

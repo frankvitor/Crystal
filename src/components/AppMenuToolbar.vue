@@ -1,5 +1,7 @@
 <template>
-    <v-app>
+    <div>
+        <app-menu v-model="menuAberto"></app-menu>
+
         <v-toolbar color="primary" dark app :clipped-left="clipped">
             <v-toolbar-side-icon @click.stop="menuAberto = !menuAberto"></v-toolbar-side-icon>
             <v-toolbar-title v-text="titlex"></v-toolbar-title>
@@ -8,10 +10,12 @@
                 <v-icon>search</v-icon>
             </v-btn>
         </v-toolbar>
-    </v-app>
+    </div>
 </template>
 
 <script>
+import AppMenu from "./AppMenu";
+
 export default {
   name: "AppMenuToolbar",
   data() {
@@ -19,7 +23,10 @@ export default {
       clipped: false,
       menuAberto: false,
       title: "Receitas"
-    };
+    };  
+  },
+  components: {
+    AppMenu
   }
 };
 </script>
