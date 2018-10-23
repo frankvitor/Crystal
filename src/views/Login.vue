@@ -22,7 +22,6 @@
           <v-flex xs12 md4>
               <v-btn flat slot="activator" href="/">Esqueceu a senha?</v-btn>   
               <cadastro></cadastro>
-              <!-- <v-btn flat v-model="menuAberto" @click.stop="menuAberto = !menuAberto">Cadastre-se</v-btn> -->
           </v-flex>
         </v-flex>
       </v-layout>
