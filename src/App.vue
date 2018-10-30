@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <app-menu v-model="menuAberto"></app-menu>
+    <app-menu v-model="menuAberto" v-if="showToolbar"></app-menu>
 
-    <v-toolbar color="primary" dark app :clipped-left="clipped">
+    <v-toolbar color="primary" dark app :clipped-left="clipped" v-if="showToolbar">
       <v-toolbar-side-icon @click.stop="menuAberto = !menuAberto"></v-toolbar-side-icon>
       <v-toolbar-title v-text="titlex"></v-toolbar-title>
       <v-spacer></v-spacer>
@@ -19,6 +19,7 @@
 
 <script>
 import AppMenu from "./components/AppMenu";
+import AppMenuToolbar from "./components/AppMenuToolbar";
 
 export default {
   name: "App",
@@ -26,16 +27,20 @@ export default {
     return {
       clipped: false,
       menuAberto: false,
-      title: "Receitas",
+      title: "Receitas"
     };
   },
-  computed:{
-    titlex(){
-      return this.$route.meta.title || this.title
+  computed: {
+    titlex() {
+      return this.$route.meta.title || this.title;
+    },
+    showToolbar() {
+      return this.$route.meta.showToolbar != undefined ? this.$route.meta.showToolbar : true;
     }
   },
   components: {
-    AppMenu
+    AppMenu,
+    AppMenuToolbar
   }
 };
 </script>

@@ -14,7 +14,7 @@
         </v-layout>
         <v-layout column align-center>
             <blockquote>
-                <v-flex xs12 lg5 mb-2>
+                <v-flex xs12  mb-2>
                     <v-expansion-panel>
                         <v-expansion-panel-content>
                             <div slot="header">
@@ -59,7 +59,7 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-flex>
-                <v-flex xs12 lg5 mb-2>
+                <v-flex xs12 mb-2>
                     <v-expansion-panel>
                         <v-expansion-panel-content>
                             <div slot="header">
@@ -92,11 +92,6 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-flex>
-                <footer>
-                    <small>
-                        <em>&mdash;Receitaria</em>
-                    </small>
-                </footer>
             </blockquote>
         </v-layout>
 
@@ -109,12 +104,17 @@ h1 {
 }
 h2 {
   color: grey;
+
 }
 li {
   color: darkgray;
 }
 blockquote {
   width: 100%;
+}
+blockquote.v-expansion-panel-content{
+    background: #FF6600;
+    font-size: 40px;
 }
 </style>
 
