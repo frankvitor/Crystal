@@ -14,7 +14,7 @@
         </v-layout>
         <v-layout column align-center>
             <blockquote>
-                <v-flex xs12  mb-2>
+                <v-flex xs12 mb-2>
                     <v-expansion-panel>
                         <v-expansion-panel-content>
                             <div slot="header">
@@ -22,17 +22,17 @@
                             </div>
                             <v-card>
                                 <v-card-text>
-                                <h3 class="mb-2">Bolo</h3>
-                                <ul style="list-style-type:disc">
-                                    <li>3 ovos</li>
-                                    <li>1 xícara(chá) de leite</li>
-                                    <li>1/2 xícara(chá) de óleo</li>
-                                    <li>1 xícara(chá) de açúcar</li>
-                                    <li>1 xícara(chá) chocolate em pó</li>
-                                    <li>2 xícaras(chá) de farinha de trigo</li>
-                                    <li>1 colher(sopa) de fermento</li>
-                                    <li>coco ralado à gosto</li>
-                                </ul>
+                                    <h3 class="mb-2">Bolo</h3>
+                                    <ul style="list-style-type:disc">
+                                        <li>3 ovos</li>
+                                        <li>1 xícara(chá) de leite</li>
+                                        <li>1/2 xícara(chá) de óleo</li>
+                                        <li>1 xícara(chá) de açúcar</li>
+                                        <li>1 xícara(chá) chocolate em pó</li>
+                                        <li>2 xícaras(chá) de farinha de trigo</li>
+                                        <li>1 colher(sopa) de fermento</li>
+                                        <li>coco ralado à gosto</li>
+                                    </ul>
                                 </v-card-text>
 
                                 <h3 class="mb-2">Calda</h3>
@@ -102,11 +102,10 @@
 
 <style scoped>
 h1 {
-  color: #FF6600;
+  color: #ff6600;
 }
 h2 {
   color: grey;
-
 }
 li {
   color: darkgray;
@@ -114,9 +113,9 @@ li {
 blockquote {
   width: 100%;
 }
-blockquote.v-expansion-panel-content{
-    background: #FF6600;
-    font-size: 40px;
+blockquote.v-expansion-panel-content {
+  background: #ff6600;
+  font-size: 40px;
 }
 </style>
 
@@ -130,20 +129,16 @@ export default {
           src: "/imagens/1.png"
         },
         {
-          src:
-            "/imagens/2.png"
+          src: "/imagens/2.png"
         },
         {
-          src:
-            "/imagens/3.png"
+          src: "/imagens/3.png"
         },
         {
-          src:
-            "/imagens/4.png"
+          src: "/imagens/4.png"
         },
         {
-          src:
-            "/imagens/5.png"
+          src: "/imagens/5.png"
         }
       ]
     };
