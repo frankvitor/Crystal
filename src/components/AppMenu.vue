@@ -1,15 +1,18 @@
 <template>
   <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
-    <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-      <!-- <v-toolbar dark color="primary"> -->
-      <v-list>
-        <v-list-tile>
-          <v-list-tile-title class="title">
-            <!-- <h3>Receitaria</h3> -->
-          </v-list-tile-title>
+    <v-img :aspect-ratio="8/3" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+
+      <v-list class="pa-0">
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <v-icon x-large>account_circle</v-icon>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title class="white--text font-weight-bold">Frank Vítor</v-list-tile-title>
+          </v-list-tile-content>
         </v-list-tile>
       </v-list>
-      <!-- </v-toolbar> -->
     </v-img>
     <v-divider></v-divider>
 
