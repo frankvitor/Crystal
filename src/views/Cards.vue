@@ -2,7 +2,7 @@
 
     <v-container fluid grid-list-lg>
         <v-layout row wrap>
-            <v-flex xs12 sm6 md4 lg3 v-for="(item,i) in items" :key="i">
+            <v-flex xs12 sm6 md4 lg3 v-for="(item,i) in bolos" :key="i">
                 <v-card>
                     <v-layout row>
                         <v-flex xs4>
@@ -15,7 +15,7 @@
                                         <h3>{{ item.title }}</h3>
                                     </div>
                                     <div>
-                                        <h4>{{ item.nome }}</h4>
+                                        <h4>{{ item.autor }}</h4>
                                     </div>
                                 </div>
                             </v-card-title>
@@ -28,15 +28,21 @@
                     </v-layout>
                     <v-divider light></v-divider>
                     <v-card-actions class="pa-3">
-                        <v-btn slot="activator" href="/Teste" color="primary" dark>
+                        <v-btn flat slot="activator" href="/Teste" color="primary" dark>
                             {{ btnNome }}
                         </v-btn>
                         <v-spacer></v-spacer>
-                        <v-icon color="#171717">{{ iconCompart }}</v-icon>
+                        <v-btn icon @click="remover(item.id)">
+                            <v-icon color="#171717">delete</v-icon>
+                        </v-btn>
+                        <v-btn icon>
+                            <v-icon color="#171717">{{ iconCompart }}</v-icon>
+                        </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
         </v-layout>
+        <v-btn color="primary" block @click="incluir()">Adicionar </v-btn>
     </v-container>
 </template>
 
@@ -52,30 +58,37 @@ h4 {
 </style>
 
 <script>
+import { db } from "@/main";
+
 export default {
   data() {
     return {
+      bolos: [],
       btnNome: "Ver receita",
       iconCompart: "share",
-      icon: "favorite",
-      items: [
-        {
-          src: "/imagens/1.png",
-          title: "Morango",
-          nome: "Frank"
-        },
-        {
-          src: "/imagens/5.png",
-          title: "Prestígio",
-          nome: "Diego",
-        },
-        {
-          src: "/imagens/4.png",
-          title: "Cereja",
-          nome: "Daniel",
-        }
-      ]
+      icon: "favorite"
     };
+  },
+  firestore() {
+    return {
+      bolos: db.collection("bolos").orderBy("title")
+    };
+  },
+  methods: {
+    incluir() {
+      db.collection("bolos").add({
+        title: "Novo bolo",
+        autor: "Frank",
+        src: "/imagens/5.png",
+        createdAt: new Date(),
+        
+      });
+    },
+    remover(id) {
+      db.collection("bolos")
+        .doc(id)
+        .delete();
+    }
   }
 };
 </script>
