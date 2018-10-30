@@ -21,6 +21,7 @@
                                 <h2>Ingredientes</h2>
                             </div>
                             <v-card>
+                                <v-card-text>
                                 <h3 class="mb-2">Bolo</h3>
                                 <ul style="list-style-type:disc">
                                     <li>3 ovos</li>
@@ -32,6 +33,7 @@
                                     <li>1 colher(sopa) de fermento</li>
                                     <li>coco ralado à gosto</li>
                                 </ul>
+                                </v-card-text>
 
                                 <h3 class="mb-2">Calda</h3>
 
