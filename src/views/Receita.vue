@@ -20,7 +20,7 @@
         </v-flex>
         <v-flex xs6>
           <h2>Ingredientes</h2>
-          <v-btn class="ml-3" color="primary"@click= fab dark small right>
+          <v-btn class="ml-3" color="primary" fab dark small right>
             <v-icon>add</v-icon>
             
           </v-btn>
