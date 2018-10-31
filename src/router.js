@@ -4,7 +4,6 @@ import Login2 from './views/Login2.vue'
 import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
 import Receita from './views/Receita.vue'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
