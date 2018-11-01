@@ -22,6 +22,7 @@
           <h2>Ingredientes</h2>
           <v-btn class="ml-3" color="primary" fab dark small right>
             <v-icon>add</v-icon>
+            
           </v-btn>
         </v-flex>
         <v-flex xs6>

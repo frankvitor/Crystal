@@ -1,9 +1,9 @@
 <template>
     <v-dialog v-model="dialog" persistent max-width="500px">
-      <v-btn flat slot="activator">Cadastre-se</v-btn>
+      <v-btn flat slot="activator"></v-btn>
       <v-card>
         <v-card-title>
-          <span class="headline">Cadastro</span>
+          <span class="headline">Ingredientes</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
@@ -32,10 +32,3 @@
       </v-card>
     </v-dialog>
 </template>
-<script>
-export default {
-  data: () => ({
-    dialog: false,
-  })
-};
-</script>
