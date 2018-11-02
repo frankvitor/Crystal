@@ -42,7 +42,7 @@ export default new Router({
       name: 'receita',
       component: Receita,
       meta:{
-        title: 'Blah'
+        title: 'Receita'
       }
     }
   ]

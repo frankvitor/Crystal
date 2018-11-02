@@ -56,6 +56,11 @@ export default {
           icon: "favorite_border",
           title: "Favoritos"
         },
+         {
+          icon: "add",
+          title: "Receita",
+          href: "/Receita"
+        },
         {
           icon: "exit_to_app",
           title: "Sair",

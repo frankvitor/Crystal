@@ -5,7 +5,6 @@
         <v-flex xs12>
           <v-text-field label="Título da Receita"></v-text-field>
         </v-flex>
-
         <v-flex xs12>
           <v-text-field label="Categoria"></v-text-field>
         </v-flex>
@@ -20,10 +19,10 @@
         </v-flex>
         <v-flex xs6>
           <h2>Ingredientes</h2>
-          <v-btn class="ml-3" color="primary" fab dark small right>
-            <v-icon>add</v-icon>
-            
-          </v-btn>
+          <!-- <v-btn class="ml-3" color="primary" fab dark small right>
+            <v-icon>add</v-icon>  
+          </v-btn> -->
+          <ingrediente></ingrediente>
         </v-flex>
         <v-flex xs6>
           <h2>Modo de preparo</h2>
@@ -74,9 +73,14 @@ h2 {
 </style>
 
 <script>
+import Ingrediente from "../components/Ingrediente";
+
 export default {
   data() {
     return { loading: false };
+  },
+  components:{
+    Ingrediente
   }
 };
 </script>
