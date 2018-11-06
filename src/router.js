@@ -4,6 +4,7 @@ import Login2 from './views/Login2.vue'
 import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
 import Receita from './views/Receita.vue'
+import Cadastro from './components/Cadastro.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,14 @@ export default new Router({
       meta:{
         title: 'Receita'
       }
-    }
+    },
+    {
+      path: '/cadastro',
+      name: 'cadastro',
+      component: Cadastro,
+      meta:{
+        title: 'Cadastro'
+      }
+    },
   ]
 })
