@@ -1,5 +1,4 @@
 <template>
-
     <v-container fluid grid-list-lg>
         <v-layout row wrap>
             <v-flex xs12 sm6 md4 lg3 v-for="(item,i) in bolos" :key="i">
@@ -42,7 +41,8 @@
                 </v-card>
             </v-flex>
         </v-layout>
-        <v-btn color="primary" block @click="incluir()">Adicionar </v-btn>
+        <v-btn color="primary" block slot="activator" href="/receita">Adicionar </v-btn>
+        <!-- <v-btn color="primary" block @click="incluir()">Adicionar </v-btn> -->
     </v-container>
 </template>
 
