@@ -20,7 +20,7 @@
 <script>
 import Cadastro from "../components/Cadastro";
 import AppMenuToolbar from "../components/AppMenuToolbar";
-import firebase from 'firebase';
+import firebase from "firebase";
 
 export default {
   name: "login",
@@ -33,7 +33,8 @@ export default {
   },
   methods: {
     login: function() {
-      firebase.auth()
+      firebase
+        .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
