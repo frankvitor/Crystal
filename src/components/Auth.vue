@@ -1,5 +1,11 @@
 <template>
-  <div ref="container" id="firebaseui-auth-container"></div>
+  <v-container fluid fill-height>
+    <v-layout align-center justify-center>
+      <v-flex xs12 sm6 md6>
+        <div ref="container" id="firebaseui-auth-container"></div>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 <script>
 import firebase from "firebase";
@@ -17,7 +23,7 @@ export default {
       ]
     };
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    console.log(this.$refs.container)
+    console.log(this.$refs.container);
     ui.start(this.$refs.container, uiConfig);
   }
 };

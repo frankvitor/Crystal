@@ -45,3 +45,25 @@ export default {
 };
 </script>
 
+<style scoped>
+/* .v-content {
+  background: #0183bd;
+  background: -moz-linear-gradient(
+    left,
+    #0183bd 2%,
+    #68a1a8 100%
+  );  */
+  /* background: -webkit-linear-gradient(
+    left,
+    #0183bd 2%,
+    #68a1a8 100%
+  ); */
+  /* background: linear-gradient(
+    to top,
+    #0183bd 2%,
+    #68a1a8 100%
+  ); */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8838', endColorstr='#ffccab',GradientType=1 ); */
+/* } */
+</style>
+

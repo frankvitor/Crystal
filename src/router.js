@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import Login2 from './views/Login2.vue'
-// import Teste from './views/Teste.vue'
+import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
 import Receita from './views/Receita.vue'
 import Cadastro from './components/Cadastro.vue'
@@ -15,22 +15,26 @@ Vue.use(Router)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: Cards },
     {
-      path: '/auth', component: Auth, meta: {
+      path: '/',
+      component: Cards
+    },
+    {
+      path: '/auth',
+      component: Auth,
+      meta: {
         title: 'Entrar',
         showToolbar: false
       }
     },
     { path: '/success', component: AuthSuccess },
-    { 
-      path: '/cards', 
-      name: 'cards', 
-      component: Cards, 
+    {
+      path: '/cards',
+      name: 'cards',
+      component: Cards,
       meta: {
         title: 'Cards'
       }
-    
     },
     {
       path: '/receita',
@@ -48,6 +52,14 @@ const router = new VueRouter({
         title: 'Cadastro'
       }
     },
+    {
+      path: '/teste',
+      name: 'teste',
+      component: Teste,
+      meta: {
+        title: 'Bolo'
+      }
+    },
   ]
 });
 export default router;
@@ -56,11 +68,6 @@ export default router;
 //   mode: 'history',
 //   routes: [
 //     {
-//       path: '/about',
-//       name: 'about',
-//       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-//     },
-//     {
 //       path: '/',
 //       name: 'login2',
 //       component: Login2,
@@ -68,14 +75,6 @@ export default router;
 //         title: 'Login',
 //         showToolbar: false
 //       }
-//     },
-//     {
-//       path: '/teste',
-//       name: 'teste',
-//       component: Teste,
-//       meta:{
-//         title: 'Bolo'
-//       }
-//     },
+//     }
 //   ]
 // })
