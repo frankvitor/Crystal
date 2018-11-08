@@ -58,7 +58,7 @@ h4 {
 </style>
 
 <script>
-import { db } from "@/main";
+import { db } from "@/firebaseConfig";
 
 export default {
   data() {
