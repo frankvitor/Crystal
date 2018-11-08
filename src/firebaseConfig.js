@@ -3,6 +3,8 @@ import VueFire from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 Vue.use(VueFire)
+
+console.log('configurando')
 firebase.initializeApp({
   apiKey: "AIzaSyB5iey2l2MlnbT-RBM8kafdgcFPKxC6QqQ",
   authDomain: "crystal-94.firebaseapp.com",
@@ -11,6 +13,7 @@ firebase.initializeApp({
   storageBucket: "crystal-94.appspot.com",
   messagingSenderId: "748783305431"
 })
+
 export const db = firebase.firestore()
 
 const settings = {timestampsInSnapshots: true};

@@ -26,12 +26,24 @@
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
+
+      <v-list-tile @click="sair">
+        <v-list-tile-action>
+          <v-icon>exit_to_app</v-icon>
+        </v-list-tile-action>
+
+        <v-list-tile-content>
+          <v-list-tile-title>Sair</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
     </v-list>
 
   </v-navigation-drawer>
 </template>
 
 <script>
+import authentication from "@/services/authentication";
+
 export default {
   name: "AppMenu",
   props: {
@@ -56,7 +68,7 @@ export default {
           icon: "favorite_border",
           title: "Favoritos"
         },
-         {
+        {
           icon: "add",
           title: "Receita",
           href: "/Receita"
@@ -78,6 +90,11 @@ export default {
       set(value) {
         this.$emit("input", value);
       }
+    }
+  },
+  methods: {
+    sair() {
+      authentication.logOut();
     }
   }
 };
