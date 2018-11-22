@@ -4,9 +4,11 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field label="Título da Receita" v-model="title"></v-text-field>
+          <!-- <v-text-field label="Título da Receita"></v-text-field> -->
         </v-flex>
         <v-flex xs12>
           <v-text-field label="Categoria" v-model="autor"></v-text-field>
+           <!-- <v-text-field label="Categoria"></v-text-field> -->
         </v-flex>
         <v-flex xs6>
           <v-text-field label="Tempo de preparo"></v-text-field>
@@ -37,7 +39,7 @@
       </v-layout>
 
     </v-container>
-    <v-bottom-nav :active.sync="bottomNav" :value="true" absolute aria-setsize="100">
+    <v-bottom-nav @click="bottomNav" :value="true" absolute aria-setsize="100">
       <v-btn block color="primary" flat value="nearby" @click="incluir()">
         <span>Salvar</span>
         <v-icon>save</v-icon>
@@ -71,32 +73,33 @@ h2 {
 
 <script>
 import Ingrediente from "../components/Ingrediente";
-//import { db } from "@/main";
+import { db } from "@/firebaseConfig";
 
 export default {
   data() {
     return {
-      loading: false
-      //bolos: [],
-      //title: '',
-      //autor: ''
+      loading: false,
+      bottomNav: false,
+      bolos: [],
+      title: '',
+      autor: ''
     };
   },
-  // firestore() {
-  //   return {
-  //     bolos: db.collection("bolos").orderBy("title")
-  //   };
-  // },
-  // methods: {
-  //   incluir() {
-  //     db.collection("bolos").add({
-  //       title: title,
-  //       autor: autor,
-  //       src: "/imagens/5.png",
-  //       createdAt: new Date()
-  //     });
-  //   }
-  // },
+  firestore() {
+    return {
+      bolos: db.collection("bolos").orderBy("title")
+    };
+  },
+  methods: {
+    incluir() {
+      db.collection("bolos").add({
+        title: this.title,
+        autor: this.autor,
+        src: "/imagens/5.png",
+        createdAt: new Date()
+      });
+    }
+  },
   components: {
     Ingrediente
   }

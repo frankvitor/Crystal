@@ -32,7 +32,7 @@ export default {
   },
   mounted() {
     // this.user = firebase.auth().currentUser;
-    console.log(this.user)
+    console.log("Carregando", this.user)
     if (this.user) {
       this.name = this.user.displayName;
       this.email = this.user.email;

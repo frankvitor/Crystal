@@ -35,6 +35,7 @@
 export default {
   data: () => ({
     dialog: false,
+    timeout: 6000,
      select: 'Escolha',
       items: [
         'Ml',

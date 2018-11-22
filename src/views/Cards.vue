@@ -80,8 +80,7 @@ export default {
         title: "Novo bolo",
         autor: "Frank",
         src: "/imagens/5.png",
-        createdAt: new Date(),
-        
+        createdAt: new Date()
       });
     },
     remover(id) {

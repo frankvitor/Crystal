@@ -1,17 +1,21 @@
 <template>
-  <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="180">
-    <v-img :aspect-ratio="8/3" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-
+  <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="280">
+    <!-- <v-img :aspect-ratio="8/3" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"> -->
+    <v-img :aspect-ratio="8/3" src="imagens/testeFundo5.png">
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-avatar>
-            <v-icon x-large>account_circle</v-icon>
+            <img :src="photo" width="54px"/>
           </v-list-tile-avatar>
 
-          <v-list-tile-content>
-            <v-list-tile-title class="white--text font-weight-bold">Frank Vítor</v-list-tile-title>
-          </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile-content>
+          <v-list-tile-title id="a" class="white--text font-weight-bold px-2">{{ this.user.displayName }}</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-content>
+          <v-list-tile-title class="white--text font-weight-bold px-2">{{ email }}</v-list-tile-title>
+        </v-list-tile-content>
+
       </v-list>
     </v-img>
     <v-divider></v-divider>
@@ -43,6 +47,7 @@
 
 <script>
 import authentication from "@/services/authentication";
+import firebase from "firebase";
 
 export default {
   name: "AppMenu",
@@ -72,13 +77,11 @@ export default {
           icon: "add",
           title: "Receita",
           href: "/Receita"
-        },
-        {
-          icon: "exit_to_app",
-          title: "Sair",
-          href: "/"
         }
       ],
+      photo: "",
+      email: "",
+      name: "",
       miniVariant: false
     };
   },
@@ -90,6 +93,17 @@ export default {
       set(value) {
         this.$emit("input", value);
       }
+    },
+    user() {
+      return firebase.auth().currentUser;
+    }
+  },
+  mounted() {
+    if (this.user) {
+      this.name = this.user.displayName;
+      this.email = this.user.email;
+      this.photo = this.user.photoURL;
+      this.userId = this.user.uid;
     }
   },
   methods: {
@@ -102,6 +116,9 @@ export default {
 <style scoped>
 h3 {
   color: #2f1300;
+}
+.a{
+  font-size: 50px;
 }
 </style>
 
