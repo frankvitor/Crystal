@@ -8,7 +8,7 @@
         </v-flex>
         <v-flex xs12>
           <v-text-field label="Categoria" v-model="autor"></v-text-field>
-           <!-- <v-text-field label="Categoria"></v-text-field> -->
+          <!-- <v-text-field label="Categoria"></v-text-field> -->
         </v-flex>
         <v-flex xs6>
           <v-text-field label="Tempo de preparo"></v-text-field>
@@ -29,13 +29,17 @@
             <v-icon>add</v-icon>
           </v-btn>
         </v-flex>
-        <v-flex xs6>
+        <!-- <v-flex xs6>
           <h2>Imagens</h2>
-          <v-btn class="ml-3" color="primary" fab dark small right>
+          <v-btn class="ml-3" color="primary" fab dark small right type="file" multiple accept="image/png" @change="detectFiles($event.target.files)">
             <v-icon>add</v-icon>
           </v-btn>
-        </v-flex>
-
+           <input type="file" multiple accept="image/png" @change="detectFiles($event.target.files)"> 
+        </v-flex> -->
+        <div>
+           <input type="file" multiple accept="image/png" @change="detectFiles($event.target.files)">
+          <div class="progress-bar" :style="{ width: progressUpload + '%'}">{{ progressUpload }}%</div>
+        </div>
       </v-layout>
 
     </v-container>
@@ -74,6 +78,7 @@ h2 {
 <script>
 import Ingrediente from "../components/Ingrediente";
 import { db } from "@/firebaseConfig";
+import { storage } from "firebase";
 
 export default {
   data() {
@@ -81,8 +86,11 @@ export default {
       loading: false,
       bottomNav: false,
       bolos: [],
-      title: '',
-      autor: ''
+      title: "",
+      autor: "",
+      progressUpload: 0,
+      file: File,
+      uploadTask: ""
     };
   },
   firestore() {
@@ -95,9 +103,35 @@ export default {
       db.collection("bolos").add({
         title: this.title,
         autor: this.autor,
-        src: "/imagens/5.png",
+        src: this.file,
         createdAt: new Date()
       });
+    },
+    detectFiles(fileList) {
+      Array.from(Array(fileList.length).keys()).map(x => {
+        this.upload(fileList[x]);
+      });
+    },
+    upload(file) {
+      this.uploadTask = storage.ref("imagens").put(file);
+    }
+  },
+  watch: {
+    uploadTask: function() {
+      this.uploadTask.on(
+        "state_changed",
+        sp => {
+          this.progressUpload = Math.floor(
+            (sp.bytesTransferred / sp.totalBytes) * 100
+          );
+        },
+        null,
+        () => {
+          this.uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+            this.$emit("url", downloadURL);
+          });
+        }
+      );
     }
   },
   components: {

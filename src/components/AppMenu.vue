@@ -1,8 +1,7 @@
 <template>
   <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app width="280">
     <!-- <v-img :aspect-ratio="8/3" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"> -->
-    <!-- <v-img :aspect-ratio="8/3" src="imagens/testeFundo5.png"> -->
-    <v-img :aspect-ratio="8/3" src="https://cdn.pixabay.com/photo/2017/06/01/13/48/mosaic-2363581_960_720.png">
+    <v-img :aspect-ratio="8/3" src="imagens/testeFundo5.png">   
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-avatar>

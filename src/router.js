@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Login2 from './views/Login2.vue'
+import Login from './views/Login.vue'
 import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
 import Receita from './views/Receita.vue'
@@ -60,21 +60,15 @@ const router = new VueRouter({
         title: 'Bolo'
       }
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      meta: {
+        title: 'Storage Firebase'
+      }
+    },
   ]
 });
 export default router;
 
-// export default new Router({
-//   mode: 'history',
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'login2',
-//       component: Login2,
-//       meta:{
-//         title: 'Login',
-//         showToolbar: false
-//       }
-//     }
-//   ]
-// })
