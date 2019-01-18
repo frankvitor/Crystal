@@ -3,7 +3,6 @@
     <v-btn flat slot="activator" class="ml-3" color="primary" fab dark small right>
       <v-icon>add</v-icon>
     </v-btn>
-    <!-- <v-btn flat slot="activator"></v-btn> -->
     <v-card>
       <v-card-title>
         <span class="headline">Ingredientes</span>

@@ -1,57 +1,81 @@
 <template>
-    <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-            <v-flex xs12 sm6 md6>
-                <v-form>
-                    <v-text-field prepend-icon="person" v-model="email" label="E-mail" type="text" required></v-text-field>
-                    <v-text-field prepend-icon="lock" v-model="password" label="Senha" type="password" required></v-text-field>
-                </v-form>
-                <v-btn v-on:click="login" block color="#b0bec5" dark large>Entrar</v-btn>
-                <v-layout>
-                    <v-btn flat slot="activator" href="/">Esqueceu a senha?</v-btn>
-                    <v-spacer></v-spacer>
-                    <cadastro></cadastro>
-                </v-layout>
-            </v-flex>
-        </v-layout>
-    </v-container>
+
+  <div>
+    <progress
+      value="0"
+      max="100"
+      id="uploader"
+    >0%</progress>
+    <input
+      type="file"
+      value="upload"
+      id="fileButton"
+    />
+  </div>
+
 </template>
 
 <script>
-import Cadastro from "../components/Cadastro";
-import AppMenuToolbar from "../components/AppMenuToolbar";
 import firebase from "firebase";
 
 export default {
-  name: "login",
-  data: function() {
+  data() {
     return {
-      drawer: null,
-      email: "",
-      password: ""
+      uploadTask: "",
+      err: "",
+      rootRef: ''
     };
   },
-  methods: {
-    login: function() {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(
-          user => {
-            alert("Bem-Vindo.");
-            console.log(user);
-            this.$router.push("/cards");
-          },
-          err => alert(err.message)
-        );
-    }
-  },
-  props: {
-    source: String
-  },
-  components: {
-    Cadastro,
-    AppMenuToolbar
+  mounted(){
+//Get elements
+var uploader = document.getElementById("uploader");
+var fileButton = document.getElementById("fileButton");
+
+// listen for file selection
+fileButton.addEventListener("change", function(e) {
+  //Get file
+  var file = e.target.files[0];
+
+  //create storage ref
+  let storageRef =firebase.storage().ref("imagens/" + file.name);
+      
+
+  // Upload file
+  var task = storageRef.put(file);
+  // Update progress bar
+  task.on(
+    "state_changed",
+
+    function progress(snapshot) {
+      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = percentage;
+    },
+
+    //function error(err) {},
+
+    function complete() {}
+  );
+});
+
   }
 };
 </script>
+
+<style media="screen">
+#doby {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#uploader {
+  appearance: none;
+  width: 50%;
+  margin: 10px;
+}
+</style>

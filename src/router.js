@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './views/Login.vue'
+import Login2 from './views/Login2.vue'
 import Teste from './views/Teste.vue'
 import Cards from './views/Cards.vue'
 import Receita from './views/Receita.vue'
@@ -61,9 +61,9 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Login,
+      path: '/login2',
+      name: 'login2',
+      component: Login2,
       meta: {
         title: 'Storage Firebase'
       }

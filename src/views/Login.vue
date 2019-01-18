@@ -1,51 +1,49 @@
 <template>
-
   <div>
-    <input type="file" multiple accept="image/png" @change="detectFiles($event.target.files)">
-    <div class="progress-bar" :style="{ width: progressUpload + '%'}">{{ progressUpload }}%</div>
-  </div>
+    <v-text-field
+      label="Select"
+      @click='pickFile'
+      v-model='imageName'
+      prepend-icon='attach_file'
+    >
+    </v-text-field>
 
+    <input
+      type="file"
+      style="display: 1"
+      ref="image"
+      accept="image/*"
+      @change="onFilePicked"
+    >
+  </div>
 </template>
 
 <script>
-import storage from 'firebase'
-
 export default {
-  data () {
-    return {
-      progressUpload: 0,
-      file: File,
-      uploadTask: '',
-    }
-  },
   methods: {
-    detectFiles (fileList) {
-      Array.from(Array(fileList.length).keys()).map( x => {
-        this.upload(fileList[x])
-      })
-    },
-    upload (file) {
-      this.uploadTask = storage.ref('imagens').put(file);
+    pickFile() {
+      this.$refs.image.click();
     }
   },
-  watch: {
-    uploadTask: function() {
-      this.uploadTask.on('state_changed', sp => {
-        this.progressUpload = Math.floor(sp.bytesTransferred / sp.totalBytes * 100)
-      }, 
-      null, 
-      () => {
-        this.uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
-          this.$emit('url', downloadURL)
-        })
-      })
+  onFilePicked(e) {
+    const files = e.target.files;
+    if (files[0] !== undefined) {
+      this.imageName = files[0].name;
+      if (this.imageName.lastIndexOf(".") <= 0) {
+        return;
+      }
+      const fr = new FileReader();
+      fr.readAsDataURL(files[0]);
+      fr.addEventListener("load", () => {
+        this.imageUrl = fr.result;
+        this.imageFile = files[0]; // this is an image file that can be sent to server...
+      });
+    } else {
+      this.imageName = "";
+      this.imageFile = "";
+      this.imageUrl = "";
     }
   }
-}
+};
 </script>
 
-<style>
-.progress-bar {
-  margin: 10px 0;
-}
-</style>
